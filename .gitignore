@@ -4,3 +4,21 @@ dist/
 .vite/
 .DS_Store
 coverage/
+
+# Angular/Babel Cache
+packages/angular-app/angular/cache/
+packages/angular-app/.angular/
+**/angular/cache/**
+**/.angular/**
+
+# Build outputs
+packages/*/dist/
+packages/*/build/
+**/build-output.log
+
+# Webpack cache
+packages/angular-app/angular/cache/20.3.2/angular-webpack/
+packages/angular-app/angular/cache/20.3.2/babel-webpack/
+
+# Package locks (manter apenas yarn.lock)
+package-lock.json
