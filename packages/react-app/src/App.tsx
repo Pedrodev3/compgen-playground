@@ -1,10 +1,16 @@
-import './App.css';
+import "./App.css";
+import ButtonManualDemo from "./components/manual/ButtonManualDemo";
+import ButtonCliButton from "./components/compgen/button-cli/Buttoncli";
+import ButtonCpButton from "./components/compgen/button-cp/Buttoncp";
+import ButtonFeButton from "./components/compgen/button-fe/Buttonfe";
 
 function App() {
   return (
     <main className="app">
-      <h1>React 19 Starter</h1>
-      <p>Aplicação básica configurada dentro do monorepo Yarn Workspaces.</p>
+      <ButtonManualDemo />
+      <ButtonCliButton />
+      <ButtonFeButton />
+      <ButtonCpButton />
     </main>
   );
 }
