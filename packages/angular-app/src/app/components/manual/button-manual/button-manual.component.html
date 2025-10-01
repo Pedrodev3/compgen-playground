@@ -1,0 +1,56 @@
+<button
+  #buttonElement
+  [type]="type"
+  [disabled]="disabled || loading"
+  [class]="buttonClasses"
+  [ngStyle]="customStyles"
+  (click)="onClick($event)"
+  (mouseenter)="onHover()"
+  (mouseleave)="onLeave()"
+  (keydown)="onKeyDown($event)"
+  [attr.aria-label]="text"
+  [attr.aria-disabled]="disabled || loading"
+  role="button"
+>
+  <!-- Loading Spinner -->
+  <span 
+    *ngIf="loading" 
+    class="inline-block w-4 h-4 mr-2 border-2 border-white border-t-transparent rounded-full animate-spin"
+    aria-hidden="true">
+  </span>
+  
+  <!-- Button Text -->
+  <span [class.opacity-0]="loading">{{ text }}</span>
+</button>
+
+<!-- Demo Section with different variants -->
+<div class="mt-8 p-6 bg-gray-50 rounded-lg">
+  <h3 class="text-lg font-semibold mb-4">Manual Button Variants Demo</h3>
+  
+  <div class="space-y-4">
+    <!-- Size variants -->
+    <div class="flex gap-4 items-center">
+      <span class="w-20 text-sm font-medium">Sizes:</span>
+      <app-button-manual text="Small" size="small" variant="primary"></app-button-manual>
+      <app-button-manual text="Medium" size="medium" variant="primary"></app-button-manual>
+      <app-button-manual text="Large" size="large" variant="primary"></app-button-manual>
+    </div>
+    
+    <!-- Color variants -->
+    <div class="flex gap-4 items-center">
+      <span class="w-20 text-sm font-medium">Colors:</span>
+      <app-button-manual text="Primary" variant="primary"></app-button-manual>
+      <app-button-manual text="Secondary" variant="secondary"></app-button-manual>
+      <app-button-manual text="Danger" variant="danger"></app-button-manual>
+      <app-button-manual text="Success" variant="success"></app-button-manual>
+    </div>
+    
+    <!-- States -->
+    <div class="flex gap-4 items-center">
+      <span class="w-20 text-sm font-medium">States:</span>
+      <app-button-manual text="Normal" variant="primary"></app-button-manual>
+      <app-button-manual text="Disabled" variant="primary" [disabled]="true"></app-button-manual>
+      <app-button-manual text="Loading" variant="primary" [loading]="true"></app-button-manual>
+    </div>
+  </div>
+</div>
