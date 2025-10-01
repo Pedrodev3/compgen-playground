@@ -1,0 +1,12 @@
+<button
+  #buttonElement
+  [type]="type"
+  [disabled]="disabled || loading"
+  [class]="buttonClasses"
+  [ngStyle]="customStyles"
+  (click)="onClick($event)"
+  [attr.aria-label]="text"
+>
+  <span *ngIf="loading" class="inline-block w-4 h-4 mr-2 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+  <span [class.opacity-0]="loading">{{ text }}</span>
+</button>
